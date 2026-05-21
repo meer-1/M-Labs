@@ -72,15 +72,29 @@ scrollToTopBtn.addEventListener('click', () => {
 const founderCarousel = document.getElementById('founderCarousel');
 if (founderCarousel) {
     const track = founderCarousel.querySelector('.carousel-track');
-    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
     const prevBtn = founderCarousel.querySelector('.carousel-btn.prev');
     const nextBtn = founderCarousel.querySelector('.carousel-btn.next');
+    const images = [
+        { src: 'images/sajad.jpeg', alt: 'Sajad Ahmad Mir' },
+        { src: 'images/dp.jpg', alt: 'Sajad Ahmad Mir' },
+        { src: 'images/image.jpeg', alt: 'Sajad Ahmad Mir' }
+    ];
     let currentIndex = 0;
+    let autoSlideInterval = null;
     let touchStartX = 0;
     let touchEndX = 0;
 
+    track.innerHTML = images.map(item => `
+        <div class="carousel-slide">
+            <img src="${item.src}" alt="${item.alt}" class="founder-image" loading="lazy">
+        </div>
+    `).join('');
+
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+
     const updateCarousel = () => {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        slides.forEach((slide, idx) => slide.classList.toggle('active', idx === currentIndex));
         const showControls = slides.length > 1;
         prevBtn.style.display = showControls ? 'flex' : 'none';
         nextBtn.style.display = showControls ? 'flex' : 'none';
@@ -96,8 +110,26 @@ if (founderCarousel) {
         updateCarousel();
     };
 
-    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
-    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+    const startAutoSlide = () => {
+        if (autoSlideInterval) return;
+        autoSlideInterval = setInterval(() => showSlide(currentIndex + 1), 3600);
+    };
+
+    const stopAutoSlide = () => {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+    };
+
+    prevBtn.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+        stopAutoSlide();
+        startAutoSlide();
+    });
+    nextBtn.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+        stopAutoSlide();
+        startAutoSlide();
+    });
 
     track.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].clientX;
@@ -108,8 +140,14 @@ if (founderCarousel) {
         const diff = touchStartX - touchEndX;
         if (Math.abs(diff) > 40) {
             showSlide(diff > 0 ? currentIndex + 1 : currentIndex - 1);
+            stopAutoSlide();
+            startAutoSlide();
         }
     });
 
+    founderCarousel.addEventListener('mouseenter', stopAutoSlide);
+    founderCarousel.addEventListener('mouseleave', startAutoSlide);
+
     updateCarousel();
+    startAutoSlide();
 }
