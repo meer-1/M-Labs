@@ -85,6 +85,53 @@ nav a.active {
 }
 
 /* =========================
+MOBILE NAV TOGGLE (hamburger)
+========================= */
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover {
+  border-color: var(--primary);
+  transform: none;
+  box-shadow: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================
 HERO SECTION
 ========================= */
 
@@ -1375,25 +1422,51 @@ RESPONSIVE DESIGN
     grid-template-columns: 1fr;
     gap: 40px;
   }
-}
 
-@media (max-width: 768px) {
   header {
-    flex-direction: column;
-    padding: 12px 20px;
-    gap: 12px;
+    padding: 14px 24px;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: flex;
   }
 
   nav {
+    flex-basis: 100%;
     flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    align-items: flex-start;
+    gap: 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  nav.nav-open {
+    max-height: 500px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
   }
 
   nav a {
-    padding: 8px 0;
+    width: 100%;
+    padding: 10px 4px;
   }
 
+  nav a.active {
+    border-bottom: none;
+    background: var(--bg-light);
+    border-radius: 6px;
+    padding-left: 8px;
+  }
+
+  nav .theme-toggle {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 768px) {
   .hero {
     height: 50vh;
     padding: 20px;

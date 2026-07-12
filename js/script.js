@@ -289,6 +289,46 @@ if (founderCarousel) {
 }
 
 // =============================
+// MOBILE NAV (hamburger toggle)
+// =============================
+function initMobileNav() {
+  document.querySelectorAll('header').forEach(header => {
+    if (header.querySelector('.nav-toggle')) return;
+
+    const nav = header.querySelector('nav');
+    if (!nav) return;
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-toggle';
+    toggle.setAttribute('aria-label', 'Toggle menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.innerHTML = '<span></span><span></span><span></span>';
+
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('nav-open')) return;
+      if (nav.contains(e.target) || toggle.contains(e.target)) return;
+      nav.classList.remove('nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+
+    header.insertBefore(toggle, nav);
+  });
+}
+
+// =============================
 // DARK MODE TOGGLE
 // =============================
 function initThemeToggle() {
@@ -789,6 +829,7 @@ function initWhatsAppButton() {
 // =============================
 // INITIALIZE NEW INTERACTIVE FEATURES
 // =============================
+initMobileNav();
 initThemeToggle();
 initHeroBackground();
 initStatCounters();
