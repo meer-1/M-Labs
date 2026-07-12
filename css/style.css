@@ -647,6 +647,32 @@ EXAM CARDS
 }
 
 /* =========================
+FOOTER CONTACT STRIP
+========================= */
+
+.footer-contact {
+  background: var(--bg-light);
+  text-align: center;
+  padding: 24px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-contact p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.footer-contact a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
 FOOTER
 ========================= */
 
@@ -752,6 +778,11 @@ DARK MODE
 
 [data-theme="dark"] .form-embed {
   border-color: #27272a;
+}
+
+[data-theme="dark"] footer,
+[data-theme="dark"] .footer-contact {
+  background: #000;
 }
 
 /* =========================
