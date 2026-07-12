@@ -1361,6 +1361,31 @@ CHAT ASSISTANT WIDGET
   padding: 10px 16px;
 }
 
+/* =========================
+WHATSAPP WINDOW THEME (reuses .chat-window structure)
+========================= */
+
+.whatsapp-window .chat-header {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.whatsapp-window .chat-msg.user {
+  background: #25d366;
+}
+
+.whatsapp-window #whatsappSend {
+  background: #25d366;
+}
+
+.whatsapp-window #whatsappSend:hover {
+  background: #1ebe5b;
+}
+
+.whatsapp-window #whatsappInput:focus {
+  border-color: #25d366;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+}
+
 @media (max-width: 480px) {
   .chat-window {
     right: 16px;
