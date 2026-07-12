@@ -1065,6 +1065,38 @@ CHAT ASSISTANT WIDGET
   bottom: 24px !important;
 }
 
+.whatsapp-launcher {
+  position: fixed;
+  bottom: 24px;
+  right: 156px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-launcher svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+.whatsapp-launcher:hover {
+  background: #1ebe5b;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
 .chat-launcher {
   position: fixed;
   bottom: 24px;
@@ -1258,14 +1290,19 @@ CHAT ASSISTANT WIDGET
     width: auto;
   }
 
-  .chat-launcher {
+  .whatsapp-launcher {
     right: 16px;
     bottom: 16px;
   }
 
+  .chat-launcher {
+    right: 16px;
+    bottom: 84px;
+  }
+
   #scrollToTop {
     right: 16px !important;
-    bottom: 84px !important;
+    bottom: 152px !important;
   }
 }
 
