@@ -1225,8 +1225,9 @@ CHAT ASSISTANT WIDGET
 }
 
 .whatsapp-launcher svg {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
   fill: white;
 }
 
