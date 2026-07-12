@@ -679,21 +679,35 @@ function initChatWidget() {
   };
 
   const rules = [
-    { keys: ['hi', 'hello', 'hey', 'hii', 'yo'], reply: "Hi! 👋 I'm the Mlabs assistant. Ask me about courses, exams, mentors, fees, or how to apply." },
-    { keys: ['course', 'courses', 'program', 'programs', 'offer', 'offering', 'services'], reply: `We run three core programs: <strong>Teaching</strong> (Math, Data Science &amp; AI foundations), <strong>Competitive Coding</strong> (DSA &amp; contests), and <strong>Exam Preparation</strong> (SAT, IIT JAM, GATE, CSIR NET, JKSSB). See the <a href="${link('home')}">homepage</a> for an overview.` },
-    { keys: ['math', 'mathematics', 'teaching', 'foundation'], reply: `Our Teaching program covers Mathematics Fundamentals, Data Science &amp; Statistics, and AI/ML basics — structured 10-12 week courses. Details: <a href="${link('teaching')}">Teaching page</a>.` },
-    { keys: ['coding', 'programming', 'algorithm', 'dsa', 'contest', 'codeforces', 'leetcode'], reply: `Our Competitive Coding track covers data structures &amp; algorithms, contest prep (Codeforces, AtCoder, ICPC, IOI), and intensive problem solving. Details: <a href="${link('coding')}">Coding page</a>.` },
-    { keys: ['exam', 'exams', 'sat', 'jam', 'gate', 'csir', 'net', 'jkssb'], reply: `We prepare students for SAT, IIT JAM, GATE, CSIR NET and JKSSB, plus custom exam coaching on request. Details: <a href="${link('exams')}">Exam Prep page</a>.` },
-    { keys: ['mentor', 'mentors', 'teacher', 'instructor', 'faculty', 'sajad', 'founder'], reply: `Mlabs is led by Sajad Ahmad Mir (PhD researcher @ NTU Singapore, CSIR-NET AIR 36) alongside a team of PhDs and competition veterans. Meet the team: <a href="${link('mentors')}">Mentors page</a>.` },
-    { keys: ['fee', 'fees', 'price', 'pricing', 'cost', 'payment', 'money'], reply: `Pricing depends on the program and format (group / one-on-one / self-paced). Fill out the <a href="${link('apply')}">sign-up form</a> and our team will share exact pricing within 24 hours.` },
-    { keys: ['refund', 'cancel', 'money back', 'money-back'], reply: `We offer a 7-day money-back guarantee. After that, refunds are prorated based on course completion.` },
-    { keys: ['success', 'result', 'results', 'rate', 'placement'], reply: `We maintain a 95%+ success rate across exams, with 1000+ students trained by 50+ expert instructors.` },
-    { keys: ['apply', 'enroll', 'enrol', 'signup', 'sign up', 'register', 'join', 'start'], reply: `You can apply directly here: <a href="${link('apply')}">Sign Up page</a>. Our team responds within 24 hours of your submission.` },
-    { keys: ['contact', 'support', 'help', 'reach', 'human', 'talk to someone'], reply: `The quickest way to reach us is the <a href="${link('apply')}">sign-up form</a> — our team follows up within 24 hours.` },
-    { keys: ['blog', 'article', 'articles'], reply: `Check out tips and strategies on our <a href="${link('blog')}">Blog</a>.` },
+    { keys: ['hi', 'hello', 'hey', 'hii', 'yo'], reply: "Hi! 👋 I'm the Mlabs assistant. Ask me about courses, exams, mentors, fees, or how to apply.", related: ['Courses', 'Exams', 'Mentors'] },
+    { keys: ['course', 'courses', 'program', 'programs', 'offer', 'offering', 'services'], reply: `We run three core programs: <strong>Teaching</strong> (Math, Data Science &amp; AI foundations), <strong>Competitive Coding</strong> (DSA &amp; contests), and <strong>Exam Preparation</strong> (SAT, IIT JAM, GATE, CSIR NET, JKSSB). See the <a href="${link('home')}">homepage</a> for an overview.`, related: ['Teaching', 'Coding', 'Exams'] },
+    { keys: ['math', 'mathematics', 'teaching', 'foundation'], reply: `Our Teaching program covers Mathematics Fundamentals, Data Science &amp; Statistics, and AI/ML basics — structured 10-12 week courses. Details: <a href="${link('teaching')}">Teaching page</a>.`, related: ['Duration', 'Fees', 'How to apply'] },
+    { keys: ['coding', 'programming', 'algorithm', 'dsa', 'contest', 'codeforces', 'leetcode'], reply: `Our Competitive Coding track covers data structures &amp; algorithms, contest prep (Codeforces, AtCoder, ICPC, IOI), and intensive problem solving. Details: <a href="${link('coding')}">Coding page</a>.`, related: ['Duration', 'Fees', 'How to apply'] },
+    { keys: ['exam', 'exams'], reply: `We prepare students for SAT, IIT JAM, GATE, CSIR NET and JKSSB, plus custom exam coaching on request. Details: <a href="${link('exams')}">Exam Prep page</a>.`, related: ['SAT', 'IIT JAM', 'GATE', 'CSIR NET', 'JKSSB'] },
+    { keys: ['sat'], reply: `SAT prep covers Reading, Writing and Math with a target score of 1400+. We focus on test strategy, timing, and skill building — 92% of our SAT students hit their target. Details: <a href="${link('exams')}">Exam Prep page</a>.`, related: ['GATE', 'IIT JAM', 'How to apply'] },
+    { keys: ['jam', 'iit jam'], reply: `IIT JAM Mathematics prep covers real analysis, abstract algebra, complex analysis and linear algebra at MSc-entrance depth, taught by Sajad (himself an IIT JAM qualifier). 96% success rate.`, related: ['CSIR NET', 'GATE', 'How to apply'] },
+    { keys: ['gate'], reply: `GATE prep (Engineering Mathematics, CS, Data Science &amp; AI) covers linear algebra, calculus, probability and optimization, with a 95% student success rate.`, related: ['CSIR NET', 'IIT JAM', 'How to apply'] },
+    { keys: ['csir', 'net', 'csir net'], reply: `CSIR NET Mathematical Sciences coaching draws directly on Sajad's own AIR 36 qualifying rank — deep coverage of pure &amp; applied math at PhD-entrance level. 94% success rate.`, related: ['GATE', 'IIT JAM', 'How to apply'] },
+    { keys: ['jkssb'], reply: `JKSSB Mathematics/Science prep is tailored for Jammu &amp; Kashmir state civil service exams, with local insights and region-specific strategy. 93% success rate.`, related: ['Exams', 'How to apply'] },
+    { keys: ['mentor', 'mentors', 'teacher', 'instructor', 'faculty', 'sajad', 'founder'], reply: `Mlabs is led by Sajad Ahmad Mir (PhD researcher @ NTU Singapore, CSIR-NET AIR 36) alongside a team of PhDs and competition veterans. Meet the team: <a href="${link('mentors')}">Mentors page</a>.`, related: ['Team', 'How to apply'] },
+    { keys: ['team', 'staff', 'faculty members'], reply: `Beyond Sajad, the team includes Dr. Arjun Kumar (Olympiad &amp; pure math), Prof. Li Chen (algorithms &amp; CS), Dr. Sarah Lee (data science &amp; statistics), Prof. Raj Patel (GATE &amp; civil services), Dr. Maya Sharma (AI/ML) and Prof. James Wilson (research mathematics). Full bios: <a href="${link('mentors')}">Mentors page</a>.`, related: ['Mentors', 'How to apply'] },
+    { keys: ['fee', 'fees', 'price', 'pricing', 'cost', 'payment', 'money'], reply: `Pricing depends on the program and format (group / one-on-one / self-paced). Fill out the <a href="${link('apply')}">sign-up form</a> and our team will share exact pricing within 24 hours.`, related: ['Scholarship', 'Refund policy', 'How to apply'] },
+    { keys: ['scholarship', 'financial aid'], reply: `We offer performance-based scholarships to deserving students. Mention it in your sign-up, or ask our team after enrollment to discuss options.`, related: ['Fees', 'How to apply'] },
+    { keys: ['duration', 'how long', 'weeks', 'length'], reply: `Most programs run 10-14 weeks depending on the course, with flexible scheduling so you can move at your own pace.`, related: ['Courses', 'Fees'] },
+    { keys: ['refund', 'cancel', 'money back', 'money-back', 'refund policy'], reply: `We offer a 7-day money-back guarantee. After that, refunds are prorated based on course completion.`, related: ['Fees', 'How to apply'] },
+    { keys: ['success', 'result', 'results', 'rate', 'placement'], reply: `We maintain a 95%+ success rate across exams, with 1000+ students trained by 50+ expert instructors.`, related: ['Courses', 'Mentors'] },
+    { keys: ['practice problem', 'problem of the day', 'practice'], reply: `Check out the "Practice Problem of the Day" widget on the <a href="${link('home')}">homepage</a> — a fresh math/coding/AI problem you can try, with the answer one click away.`, related: ['Courses', 'How to apply'] },
+    { keys: ['testimonial', 'review', 'reviews'], reply: `Real student stories are on the <a href="${link('home')}">homepage</a> testimonials carousel — covering IIT JAM, GATE, CSIR NET and competitive coding results.`, related: ['Success rate', 'How to apply'] },
+    { keys: ['dark mode', 'theme', 'light mode'], reply: `There's a 🌙/☀️ toggle in the navigation bar on every page — it remembers your preference for next time.`, related: ['Courses'] },
+    { keys: ['whatsapp'], reply: `You can message us directly on WhatsApp using the green button in the corner of any page.`, related: ['Talk to a human'] },
+    { keys: ['apply', 'enroll', 'enrol', 'signup', 'sign up', 'register', 'join', 'start', 'how to apply'], reply: `You can apply directly here: <a href="${link('apply')}">Sign Up page</a>. Our team responds within 24 hours of your submission.`, related: ['Fees', 'Talk to a human'] },
+    { keys: ['contact', 'support', 'help', 'reach', 'human', 'talk to someone', 'talk to a human'], reply: `The quickest way to reach us is the <a href="${link('apply')}">sign-up form</a>, or message us instantly on WhatsApp — I can open that for you.`, related: ['Talk to a human', 'How to apply'] },
+    { keys: ['blog', 'article', 'articles'], reply: `Check out tips and strategies on our <a href="${link('blog')}">Blog</a>.`, related: ['Courses'] },
     { keys: ['thank', 'thanks'], reply: `You're welcome! Let me know if you have more questions.` },
-    { keys: ['who are you', 'what are you', 'bot'], reply: `I'm a simple scripted assistant for the Mlabs site — I can point you to courses, exams, mentors, fees, and the sign-up process.` }
+    { keys: ['who are you', 'what are you', 'bot'], reply: `I'm a simple scripted assistant for the Mlabs site — I can point you to courses, exams, mentors, fees, and the sign-up process. For anything more complex, tap "Talk to a human".`, related: ['Talk to a human'] }
   ];
+
+  const defaultQuickReplies = ['Courses', 'Exams', 'Mentors', 'Fees', 'How to apply', 'Talk to a human'];
 
   const getReply = (message) => {
     const text = message.toLowerCase();
@@ -709,8 +723,11 @@ function initChatWidget() {
       }
     });
 
-    if (best) return best.reply;
-    return `I don't have a specific answer for that yet. Try asking about <em>courses</em>, <em>exams</em>, <em>mentors</em>, <em>fees</em>, or <em>how to apply</em> — or reach our team via the <a href="${link('apply')}">sign-up form</a>.`;
+    if (best) return { reply: best.reply, related: best.related };
+    return {
+      reply: `I don't have a specific answer for that yet. Try asking about <em>courses</em>, <em>exams</em>, <em>mentors</em>, <em>fees</em>, or <em>how to apply</em> — or talk to a human via WhatsApp.`,
+      related: ['Talk to a human', 'Courses', 'Exams']
+    };
   };
 
   const wrap = document.createElement('div');
@@ -744,32 +761,89 @@ function initChatWidget() {
   const input = document.getElementById('mlabsChatInput');
   const sendBtn = document.getElementById('mlabsChatSend');
 
-  const addMessage = (html, from) => {
+  const STORAGE_KEY = 'mlabs-chat-history';
+  const OPEN_KEY = 'mlabs-chat-open';
+
+  const loadHistory = () => {
+    try { return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '[]'); } catch (e) { return []; }
+  };
+  const saveHistory = () => {
+    try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(history)); } catch (e) { /* storage unavailable */ }
+  };
+
+  const history = loadHistory();
+
+  const addMessage = (html, from, persist = true) => {
     const msg = document.createElement('div');
     msg.className = `chat-msg ${from}`;
     msg.innerHTML = html;
     messagesEl.appendChild(msg);
     messagesEl.scrollTop = messagesEl.scrollHeight;
+    if (persist) {
+      history.push({ html, from });
+      saveHistory();
+    }
   };
 
   const escapeHtml = (str) => str.replace(/[&<>"']/g, (c) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[c]));
 
-  const respondTo = (text) => {
-    addMessage(escapeHtml(text), 'user');
-    setTimeout(() => addMessage(getReply(text), 'bot'), 450);
+  const openWhatsApp = () => {
+    closeChat();
+    const waWin = document.getElementById('whatsappWindow');
+    const waInput = document.getElementById('whatsappInput');
+    if (waWin) {
+      waWin.classList.add('open');
+      if (waInput) { waInput.focus(); waInput.select(); }
+    }
   };
 
-  const quickReplies = ['Courses', 'Exams', 'Mentors', 'Fees', 'How to apply'];
-  quickReplies.forEach(label => {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'chat-quick-reply';
-    btn.textContent = label;
-    btn.addEventListener('click', () => respondTo(label));
-    quickEl.appendChild(btn);
-  });
+  const renderQuickReplies = (labels) => {
+    quickEl.innerHTML = '';
+    (labels && labels.length ? labels : defaultQuickReplies).forEach(label => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chat-quick-reply';
+      btn.textContent = label;
+      if (label === 'Talk to a human') {
+        btn.addEventListener('click', openWhatsApp);
+      } else {
+        btn.addEventListener('click', () => respondTo(label));
+      }
+      quickEl.appendChild(btn);
+    });
+  };
+
+  let typingEl = null;
+  const showTyping = () => {
+    typingEl = document.createElement('div');
+    typingEl.className = 'chat-msg bot chat-typing';
+    typingEl.innerHTML = '<span></span><span></span><span></span>';
+    messagesEl.appendChild(typingEl);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  };
+  const hideTyping = () => {
+    if (typingEl) {
+      typingEl.remove();
+      typingEl = null;
+    }
+  };
+
+  const respondTo = (text) => {
+    addMessage(escapeHtml(text), 'user');
+    showTyping();
+    const delay = 500 + Math.random() * 400;
+    setTimeout(() => {
+      hideTyping();
+      const { reply, related } = getReply(text);
+      addMessage(reply, 'bot');
+      renderQuickReplies(related);
+    }, delay);
+  };
+
+  history.forEach(m => addMessage(m.html, m.from, false));
+  if (history.length) renderQuickReplies();
 
   const sendFromInput = () => {
     const value = input.value.trim();
@@ -783,19 +857,20 @@ function initChatWidget() {
     if (e.key === 'Enter') sendFromInput();
   });
 
-  let greeted = false;
   const openChat = () => {
     win.classList.add('open');
     launcher.setAttribute('aria-expanded', 'true');
-    if (!greeted) {
-      greeted = true;
+    try { sessionStorage.setItem(OPEN_KEY, 'true'); } catch (e) { /* storage unavailable */ }
+    if (history.length === 0) {
       addMessage("Hi! 👋 I'm the Mlabs assistant. Ask me about courses, exams, mentors, fees, or how to apply — or tap a quick reply below.", 'bot');
+      renderQuickReplies();
     }
     input.focus();
   };
   const closeChat = () => {
     win.classList.remove('open');
     launcher.setAttribute('aria-expanded', 'false');
+    try { sessionStorage.setItem(OPEN_KEY, 'false'); } catch (e) { /* storage unavailable */ }
   };
 
   launcher.addEventListener('click', () => {
@@ -808,6 +883,10 @@ function initChatWidget() {
     }
   });
   closeBtn.addEventListener('click', closeChat);
+
+  try {
+    if (sessionStorage.getItem(OPEN_KEY) === 'true') openChat();
+  } catch (e) { /* storage unavailable */ }
 }
 
 // =============================
@@ -818,7 +897,7 @@ function initWhatsAppWidget() {
 
   const phone = '919682185278';
   const defaultMessage = "Hi, I'm interested in Mlabs courses.";
-  const whatsappIcon = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 2C6.55 2 2.09 6.46 2.09 11.96c0 1.86.51 3.6 1.4 5.1L2 22l5.06-1.46a9.9 9.9 0 0 0 4.99 1.35h.005c5.5 0 9.96-4.46 9.96-9.96C22 6.46 17.55 2 12.05 2zm0 18.02h-.004a8.02 8.02 0 0 1-4.09-1.12l-.293-.174-3.005.87.8-2.93-.19-.302a8 8 0 0 1-1.23-4.42c0-4.43 3.61-8.04 8.05-8.04 2.15 0 4.17.838 5.69 2.36a7.99 7.99 0 0 1 2.35 5.69c0 4.44-3.61 8.05-8.04 8.05z"/></svg>';
+  const whatsappIcon = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.002c-5.522 0-10 4.478-10 9.998 0 1.757.47 3.47 1.358 4.978L2 22l5.06-1.36a9.962 9.962 0 0 0 4.94 1.36h.001c5.522 0 10-4.478 10-9.998 0-5.52-4.478-9.998-10-9.998zm5.5 14.666c-.244.686-1.44 1.35-2.038 1.437-.552.077-1.156.105-2.598-.611-1.978-.718-3.257-2.143-3.380-2.283-.124-.141-1.164-1.32-1.166-2.521-.002-1.202.781-1.84.968-2.047.185-.208.403-.264.584-.264.18 0 .366.006.527.01.166.003.39-.062.59.472.2.534.687 1.712.748 1.84.058.128.104.215.022.355-.083.14-.126.221-.242.339-.116.118-.235.263-.34.363-.11.105-.223.203-.084.402.14.197.625.962 1.342 1.58.924.778 1.71 1.029 2.019 1.144.31.114.48.082.657-.049.176-.131.712-.826.91-1.114.2-.29.398-.238.658-.144.258.094 1.616.759 1.89.846.277.087.46.13.528.202.067.071.067.405-.178 1.091z" fill="white"/></svg>';
 
   const wrap = document.createElement('div');
   wrap.innerHTML = `
