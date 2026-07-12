@@ -1,52 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mlabs | Apply</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Mlabs</title>
+  <script>(function(){try{if(localStorage.getItem('mlabs-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">Mlabs</div>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="programs.html">Programs</a>
-<a href="mentors.html">Mentors</a>
-<a href="students.html">Students</a>
-<a href="blog.html">Blog</a>
-<a href="apply.html">Apply</a>
-</nav>
-
+  <div class="logo">Mlabs</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services/teaching.html">Teaching</a>
+    <a href="services/coding.html">Coding</a>
+    <a href="services/exams.html">Exam Prep</a>
+    <a href="mentors.html">Mentors</a>
+    <a href="blog.html">Blog</a>
+    <a href="apply.html" class="active">Sign Up</a>
+  </nav>
 </header>
 
-<section class="apply-section">
-
-<h1>Apply to Mlabs</h1>
-
-<p>
-Mlabs is a premier institute dedicated to advancing mathematical and computational skills through elite mentorship and training. Our programs in Olympiad Mathematics, Competitive Programming, and Research Mentorship prepare students for national and international competitions, fostering deep problem-solving abilities and academic excellence. Join our community of passionate learners and unlock your potential in mathematics and computing.
-</p>
-
-<div class="form-embed">
-    <!-- Replace the src below with your Google Form embed URL -->
-    <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</div>
-
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Join Mlabs Today</h1>
+  <p>Start your journey to mastering mathematics, coding, and competitive exams.</p>
 </section>
 
+<!-- SIGNUP SECTION -->
+<section style="padding: 80px 10%;">
+  <h2 class="section-title">Sign Up for Courses</h2>
+  <p class="section-subtitle">Fill out the form below to get started with Mlabs</p>
+
+  <div class="form-embed">
+    <!-- Replace the src below with your Google Form embed URL -->
+    <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</section>
+
+<!-- INFO SECTION -->
+<section style="padding: 80px 10%; background: #f9fafb;">
+  <h2 class="section-title">What Happens Next?</h2>
+  
+  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
+    <div class="feature" style="border: 1px solid #e5e7eb;">
+      <h3>1. Submit Your Details</h3>
+      <p>Fill out the application form with your information, exam choice, and any specific requirements.</p>
+    </div>
+
+    <div class="feature" style="border: 1px solid #e5e7eb;">
+      <h3>2. Connect with Mentor</h3>
+      <p>Our team will contact you within 24 hours to discuss your goals and learning needs.</p>
+    </div>
+
+    <div class="feature" style="border: 1px solid #e5e7eb;">
+      <h3>3. Start Learning</h3>
+      <p>Get instant access to courses, study materials, and mentorship. Begin your preparation immediately.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section style="padding: 80px 10%;">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  
+  <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        What courses are offered?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We offer comprehensive coaching in Teaching (Math, Data Science, AI), Competitive Coding, and Exam Preparation (SAT, IIT JAM, GATE, CSIR NET, JKSSB).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        How long does each program last?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Program duration varies from 10-14 weeks depending on the course. Flexible scheduling allows you to learn at your own pace with structured guidance.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Can I get a refund?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>We offer a 7-day money-back guarantee if you're not satisfied. After that, refunds are prorated based on course completion.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Do you offer scholarships?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! We offer performance-based scholarships to deserving students. Contact us after enrollment to discuss scholarship opportunities.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        What's your success rate?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>95%+ of our students successfully clear their targeted exams. We track results rigorously and continuously improve our curriculum.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button">
+        Can I switch between programs?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, you can switch programs or combine multiple courses. Our advisors will help you create a personalized learning path.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta">
+  <h2>Don't Wait, Start Today</h2>
+  <p>Limited spots available. Secure your seat now and transform your future</p>
+  <a class="btn" href="#signup" style="display: inline-block;">Apply Now</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
-
-<p>© 2026 Mlabs</p>
-
+  <p>&copy; 2026 Mlabs. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
 </footer>
 
 <button id="scrollToTop" class="btn" style="position: fixed; bottom: 20px; right: 20px; display: none;">↑ Top</button>

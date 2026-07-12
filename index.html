@@ -1,120 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mlabs | Mathematics & Computing Institute</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mlabs | Master Math, Coding & Exams</title>
+  <script>(function(){try{if(localStorage.getItem('mlabs-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">Mlabs</div>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="programs.html">Programs</a>
-<a href="mentors.html">Mentors</a>
-<a href="students.html">Students</a>
-<a href="blog.html">Blog</a>
-<a href="apply.html">Apply</a>
-</nav>
-
+  <div class="logo">Mlabs</div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="services/teaching.html">Teaching</a>
+    <a href="services/coding.html">Coding</a>
+    <a href="services/exams.html">Exam Prep</a>
+    <a href="mentors.html">Mentors</a>
+    <a href="blog.html">Blog</a>
+    <a href="apply.html">Sign Up</a>
+  </nav>
 </header>
 
-
+<!-- HERO SECTION -->
 <section class="hero">
-
-<h1>Train Your Mind Like a Mathematician</h1>
-
-<p>
-Elite mentorship in mathematics, algorithms, and computing
-for students preparing for national and international competitions.
-</p>
-
-<a class="btn" href="apply.html">Join Mlabs</a>
-
+  <h1>Master Mathematics, Coding & Exams</h1>
+  <p>Expert-led training for competitive exams and programming mastery. SAT, IIT JAM, GATE, CSIR NET, JKSSB & more.</p>
+  <a class="btn" href="apply.html">Sign Up for Courses</a>
 </section>
 
-
-<section class="founder-section">
-
-<h2>Founder & CEO</h2>
-
-<div class="founder-details">
-    <div class="founder-carousel" id="founderCarousel" aria-label="Founder image carousel" role="region">
-        <button class="carousel-btn prev" type="button" aria-label="Previous image">‹</button>
-        <div class="carousel-track" aria-live="polite"></div>
-        <button class="carousel-btn next" type="button" aria-label="Next image">›</button>
+<!-- SERVICES SECTION -->
+<section style="padding: 80px 10%; background: #ffffff;">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-subtitle">Comprehensive training across three core areas</p>
+  
+  <div class="services">
+    <div class="service-card">
+      <div class="service-card-icon">📚</div>
+      <h3>Teaching</h3>
+      <p>Build strong foundations in mathematics, data science, and AI concepts. Perfect for students starting their competitive exam journey or looking to strengthen core concepts.</p>
+      <a href="services/teaching.html">Learn More →</a>
     </div>
-
-<h3>Sajad Ahmad Mir</h3>
-<p>Leading Mlabs with a strong academic foundation and competition-focused mentorship across Mathematics -Data Science & AI, and Research.</p>
-
-<table>
-    <tr>
-        <td>PhD Researcher @ <i><b>NTU Singapore</b></i></td>
-    </tr>
-    <tr>
-        <td><i>M.Tech Data & Computational Science, IIT Jodhpur</i></td>
-    </tr>
-    <tr>
-        <td>M.Sc Mathematics, IIT Jodhpur</td>
-    </tr>
-    <tr>
-        <td>B.Sc (Hons) Mathematics, University of Delhi</td>
-    </tr>
-    <tr>
-        <td>Qualified: CSIR-NET Mathematical Sciences LS (AIR 36)</td>
-    </tr>
-    <tr>
-        <td>Qualified: IIT JAM Mathematics, GATE Mathematics, GATE Data Science & AI</td>
-    </tr>
-</table>
-
-</div>
-
+    
+    <div class="service-card">
+      <div class="service-card-icon">💻</div>
+      <h3>Competitive Coding</h3>
+      <p>Master algorithms, data structures, and problem-solving techniques. Prepare for coding contests on Codeforces, AtCoder, and international platforms.</p>
+      <a href="services/coding.html">Learn More →</a>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-card-icon">🎯</div>
+      <h3>Exam Preparation</h3>
+      <p>Targeted prep for SAT, IIT JAM, GATE, CSIR NET, and JKSSB. Proven strategies and comprehensive coverage tailored to each exam.</p>
+      <a href="services/exams.html">Learn More →</a>
+    </div>
+  </div>
 </section>
 
+<!-- STATS SECTION -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-number">1000+</div>
+      <div class="stat-label">Students Trained</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">95%</div>
+      <div class="stat-label">Success Rate</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Expert Instructors</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">5+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+</section>
 
+<!-- INSTRUCTOR SECTION -->
+<section class="instructor-section">
+  <h2 class="section-title" style="margin-bottom: 60px;">Learn from the Best</h2>
+  
+  <div class="instructor-container">
+    <div class="instructor-image">
+      <img src="https://via.placeholder.com/400x400?text=Sajad+Ahmad+Mir" alt="Sajad Ahmad Mir - Founder & CEO">
+    </div>
+    
+    <div class="instructor-content">
+      <h3>Sajad Ahmad Mir</h3>
+      <div class="title">Founder & CEO, Mathematics & AI Expert</div>
+      
+      <p>Sajad brings years of expertise in mathematics, data science, and research mentorship. His passion for teaching and proven track record of student success make him the ideal guide for your competitive exam journey.</p>
+      
+      <ul class="instructor-creds">
+        <li>PhD Researcher @ NTU Singapore</li>
+        <li>M.Tech Data & Computational Science, IIT Jodhpur</li>
+        <li>M.Sc Mathematics, IIT Jodhpur</li>
+        <li>B.Sc (Hons) Mathematics, University of Delhi</li>
+        <li>Qualified: CSIR-NET Mathematical Sciences (AIR 36)</li>
+        <li>Qualified: IIT JAM, GATE Mathematics & Data Science & AI</li>
+      </ul>
+      
+      <a class="btn btn-primary" href="mentors.html">Meet Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE PROBLEM OF THE DAY -->
+<section style="padding: 80px 10%; background: #ffffff;">
+  <h2 class="section-title">Sharpen Your Skills</h2>
+  <p class="section-subtitle">A fresh problem across math, coding & AI — picked at random, solved by you</p>
+
+  <div class="problem-widget" id="problemWidget">
+    <div class="problem-widget-header">
+      <span class="problem-tag" id="problemTag">Mathematics</span>
+      <span style="font-size: 13px; color: var(--text-muted);">🧠 Practice Problem of the Day</span>
+    </div>
+    <div class="problem-text" id="problemText">Loading…</div>
+    <div class="problem-actions">
+      <button class="btn btn-outline" id="showAnswerBtn" type="button">Show Answer</button>
+      <button class="btn btn-primary" id="newProblemBtn" type="button">New Problem</button>
+    </div>
+    <div class="problem-answer" id="problemAnswerWrap">
+      <div class="problem-answer-inner" id="problemAnswerText"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="padding: 80px 10%; background: #f9fafb;">
+  <h2 class="section-title">What Our Students Say</h2>
+  <p class="section-subtitle">Real results from real students</p>
+
+  <!-- Sample testimonials — replace with real student quotes -->
+  <div class="testimonial-carousel" id="testimonialCarousel">
+    <div class="testimonial-track-outer">
+      <div class="testimonial-track">
+        <div class="testimonial-slide">
+          <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Sajad's approach to real analysis completely changed how I think about proofs. I went from struggling with IIT JAM mock tests to cracking the exam with a top rank."</p>
+            <div class="testimonial-author">Ayesha K. — IIT JAM Mathematics</div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The competitive coding track gave me a structured path through DSA that self-study never could. My Codeforces rating jumped two divisions in one semester."</p>
+            <div class="testimonial-author">Rohan V. — Competitive Coding</div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Weekly doubt-clearing sessions and the mock test analysis were the difference-makers for me in CSIR NET. The mentors genuinely care about your progress."</p>
+            <div class="testimonial-author">Priya S. — CSIR NET Mathematical Sciences</div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"I came in with rusty fundamentals and left with a GATE score I didn't think was possible. The pacing and problem sets were exactly what I needed."</p>
+            <div class="testimonial-author">Karan M. — GATE Data Science & AI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-controls">
+      <button class="carousel-btn prev" type="button" aria-label="Previous testimonial">‹</button>
+      <div class="testimonial-dots"></div>
+      <button class="carousel-btn next" type="button" aria-label="Next testimonial">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE MLABS -->
 <section class="features">
-
-<div class="feature">
-<h3>Olympiad Training</h3>
-<p>Deep mathematical problem solving.</p>
-</div>
-
-<div class="feature">
-<h3>Competitive Programming</h3>
-<p>Algorithms and contest preparation.</p>
-</div>
-
-<div class="feature">
-<h3>Research Mentorship</h3>
-<p>Prepare for graduate research.</p>
-</div>
-
+  <h2 class="section-title" style="margin-bottom: 60px;">Why Choose Mlabs?</h2>
+  
+  <div class="features-grid">
+    <div class="feature">
+      <h3>Expert Mentorship</h3>
+      <p>Learn directly from PhD researchers and competition veterans with proven success in national and international exams.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>Comprehensive Curriculum</h3>
+      <p>Structured courses covering all exam syllabuses with regular updates based on latest exam patterns and trends.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>Personalized Learning</h3>
+      <p>Customized guidance based on your pace, goals, and areas of improvement. Small group sizes ensure individual attention.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>Practical Problem Solving</h3>
+      <p>Hundreds of handpicked problems, practice tests, and real exam simulations to build confidence and speed.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>Continuous Support</h3>
+      <p>Doubt clearing sessions, progress tracking, and mentorship beyond coursework for holistic development.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>Proven Results</h3>
+      <p>95%+ success rate across exams. Join thousands of successful students who have cracked competitive exams.</p>
+    </div>
+  </div>
 </section>
 
-
+<!-- CTA SECTION -->
 <section class="cta">
-
-<h2>Start Your Mathematical Journey</h2>
-
-<a class="btn" href="programs.html">Explore Programs</a>
-
+  <h2>Ready to Transform Your Future?</h2>
+  <p>Start your journey with Mlabs today and achieve your academic goals</p>
+  <a class="btn" href="apply.html">Sign Up for Courses</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-
-<p>© 2026 Mlabs</p>
-
+  <p>&copy; 2026 Mlabs. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
 </footer>
 
 <button id="scrollToTop" class="btn" style="position: fixed; bottom: 20px; right: 20px; display: none;">↑ Top</button>

@@ -1,24 +1,101 @@
-<link rel="stylesheet" href="css/style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Mlabs</title>
+  <script>(function(){try{if(localStorage.getItem('mlabs-theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-<h1>Mlabs Blog</h1>
+<body>
 
-<div class="article">
+<header>
+  <div class="logo">Mlabs</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services/teaching.html">Teaching</a>
+    <a href="services/coding.html">Coding</a>
+    <a href="services/exams.html">Exam Prep</a>
+    <a href="mentors.html">Mentors</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="apply.html">Sign Up</a>
+  </nav>
+</header>
 
-<h2>How to Think Like a Mathematician</h2>
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Mlabs Blog</h1>
+  <p>Tips, strategies, and insights for mathematical excellence and competitive success</p>
+</section>
 
-<p>
-Mathematics is not about formulas but about patterns,
-structures, and deep reasoning.
-</p>
+<!-- BLOG SECTION -->
+<section style="padding: 80px 10%;">
+  <h2 class="section-title">Latest Articles</h2>
 
-</div>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div class="article">
+      <h2>How to Think Like a Mathematician</h2>
+      <p>
+        Mathematics is not about formulas but about patterns, structures, and deep reasoning. 
+        In this article, we explore the mindset and techniques that help mathematicians solve complex problems.
+      </p>
+      <a href="#" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
 
-<div class="article">
+    <div class="article">
+      <h2>Top 10 Algorithmic Techniques for Competitive Programming</h2>
+      <p>
+        Understanding algorithms is essential for computing competitions. We break down the top 10 techniques 
+        you need to master to excel in competitive programming contests.
+      </p>
+      <a href="#" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
 
-<h2>Top 10 Algorithmic Techniques</h2>
+    <div class="article">
+      <h2>CSIR NET Mathematics: A Comprehensive Guide</h2>
+      <p>
+        Preparing for CSIR NET? Learn the complete syllabus, exam strategy, time management tips, 
+        and preparation timeline from someone who qualified with AIR 36.
+      </p>
+      <a href="#" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
 
-<p>
-Understanding algorithms is essential for computing competitions.
-</p>
+    <div class="article">
+      <h2>IIT JAM Mathematics: Common Mistakes to Avoid</h2>
+      <p>
+        IIT JAM is a challenging exam. In this article, we highlight common mistakes students make 
+        and provide strategies to avoid them.
+      </p>
+      <a href="#" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
 
-</div>
+    <div class="article">
+      <h2>Data Structures Every Programmer Should Know</h2>
+      <p>
+        From arrays to graphs, learn about the fundamental data structures that form the backbone 
+        of computer science and competitive programming.
+      </p>
+      <a href="#" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta">
+  <h2>Ready to Apply Your Knowledge?</h2>
+  <p>Enroll in our courses and start your journey to mastery</p>
+  <a class="btn" href="apply.html">Sign Up Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Mlabs. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
+
+<button id="scrollToTop" class="btn" style="position: fixed; bottom: 20px; right: 20px; display: none;">↑ Top</button>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
