@@ -807,9 +807,28 @@ DARK MODE
 [data-theme="dark"] .article,
 [data-theme="dark"] .faq-item,
 [data-theme="dark"] .problem-widget,
-[data-theme="dark"] .video-card {
+[data-theme="dark"] .video-card,
+[data-theme="dark"] .carousel-btn,
+[data-theme="dark"] .chat-msg.bot {
   background: #18181c;
   border-color: #27272a;
+}
+
+[data-theme="dark"] .instructor-section {
+  background: #111114;
+}
+
+[data-theme="dark"] .chat-window {
+  background: #0f0f12;
+}
+
+[data-theme="dark"] .chat-input-row {
+  background: #0f0f12;
+  border-top-color: #27272a;
+}
+
+[data-theme="dark"] .chat-quick-reply {
+  background: #18181c;
 }
 
 [data-theme="dark"] .instructor-image {
