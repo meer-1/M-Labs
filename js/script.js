@@ -495,7 +495,7 @@ function initStatCounters() {
 // STAGGERED GRID REVEAL
 // =============================
 function initStaggerReveal() {
-  const grids = document.querySelectorAll('.services, .features-grid, .stats-grid, .mentor-grid, .exam-grid, .testimonials, .dashboard');
+  const grids = document.querySelectorAll('.services, .features-grid, .stats-grid, .mentor-grid, .exam-grid, .testimonials, .dashboard, .video-grid');
 
   grids.forEach(grid => {
     const children = Array.from(grid.children);
@@ -699,6 +699,7 @@ function initChatWidget() {
     { keys: ['practice problem', 'problem of the day', 'practice'], reply: `Check out the "Practice Problem of the Day" widget on the <a href="${link('home')}">homepage</a> — a fresh math/coding/AI problem you can try, with the answer one click away.`, related: ['Courses', 'How to apply'] },
     { keys: ['testimonial', 'review', 'reviews'], reply: `Real student stories are on the <a href="${link('home')}">homepage</a> testimonials carousel — covering IIT JAM, GATE, CSIR NET and competitive coding results.`, related: ['Success rate', 'How to apply'] },
     { keys: ['dark mode', 'theme', 'light mode'], reply: `There's a 🌙/☀️ toggle in the navigation bar on every page — it remembers your preference for next time.`, related: ['Courses'] },
+    { keys: ['video', 'videos', 'youtube', 'channel'], reply: `Watch free lessons and walkthroughs on our <a href="https://www.youtube.com/@mlabs-1" target="_blank" rel="noopener">YouTube channel</a> — a few are also embedded on the <a href="${link('home')}">homepage</a>.`, related: ['Courses', 'How to apply'] },
     { keys: ['whatsapp'], reply: `You can message us directly on WhatsApp using the green button in the corner of any page.`, related: ['Talk to a human'] },
     { keys: ['apply', 'enroll', 'enrol', 'signup', 'sign up', 'register', 'join', 'start', 'how to apply'], reply: `You can apply directly here: <a href="${link('apply')}">Sign Up page</a>. Our team responds within 24 hours of your submission.`, related: ['Fees', 'Talk to a human'] },
     { keys: ['contact', 'support', 'help', 'reach', 'human', 'talk to someone', 'talk to a human'], reply: `The quickest way to reach us is the <a href="${link('apply')}">sign-up form</a>, or message us instantly on WhatsApp — I can open that for you.`, related: ['Talk to a human', 'How to apply'] },

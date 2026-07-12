@@ -806,7 +806,8 @@ DARK MODE
 [data-theme="dark"] .course,
 [data-theme="dark"] .article,
 [data-theme="dark"] .faq-item,
-[data-theme="dark"] .problem-widget {
+[data-theme="dark"] .problem-widget,
+[data-theme="dark"] .video-card {
   background: #18181c;
   border-color: #27272a;
 }
@@ -962,6 +963,47 @@ FAQ ACCORDION
   color: var(--text-muted);
   font-size: 15px;
   line-height: 1.7;
+}
+
+/* =========================
+VIDEO GRID
+========================= */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.video-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+  transform: translateY(-4px);
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* =========================
