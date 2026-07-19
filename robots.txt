@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard.html
+Disallow: /programs.html
+
+Sitemap: https://meer-1.github.io/M-Labs/sitemap.xml

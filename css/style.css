@@ -514,6 +514,20 @@ MENTOR GRID
   object-fit: cover;
 }
 
+.mentor-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+}
+
 .mentor h4 {
   font-size: 18px;
   font-weight: 700;
@@ -781,6 +795,8 @@ DARK MODE
 [data-theme="dark"] [style*="background:#ffffff"],
 [data-theme="dark"] [style*="background: #f9fafb"],
 [data-theme="dark"] [style*="background:#f9fafb"],
+[data-theme="dark"] [style*="background: white"],
+[data-theme="dark"] [style*="background:white"],
 [data-theme="dark"] [style*="rgb(255, 255, 255)"],
 [data-theme="dark"] [style*="rgb(249, 250, 251)"] {
   background: #111114 !important;
