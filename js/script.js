@@ -332,36 +332,34 @@ function initMobileNav() {
 // DARK MODE TOGGLE
 // =============================
 function initThemeToggle() {
+  if (document.querySelector('.theme-toggle-fab')) return;
+
   const setStoredTheme = (value) => {
     try { localStorage.setItem('mlabs-theme', value); } catch (e) { /* storage unavailable */ }
   };
 
-  document.querySelectorAll('header nav').forEach(nav => {
-    if (nav.querySelector('.theme-toggle')) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'theme-toggle-fab';
+  btn.setAttribute('aria-label', 'Toggle dark mode');
 
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'theme-toggle';
-    btn.setAttribute('aria-label', 'Toggle dark mode');
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  btn.textContent = isDark ? '☀️' : '🌙';
 
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    btn.textContent = isDark ? '☀️' : '🌙';
-
-    btn.addEventListener('click', () => {
-      const currentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (currentlyDark) {
-        document.documentElement.removeAttribute('data-theme');
-        setStoredTheme('light');
-        btn.textContent = '🌙';
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        setStoredTheme('dark');
-        btn.textContent = '☀️';
-      }
-    });
-
-    nav.appendChild(btn);
+  btn.addEventListener('click', () => {
+    const currentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (currentlyDark) {
+      document.documentElement.removeAttribute('data-theme');
+      setStoredTheme('light');
+      btn.textContent = '🌙';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      setStoredTheme('dark');
+      btn.textContent = '☀️';
+    }
   });
+
+  document.body.appendChild(btn);
 }
 
 // =============================
